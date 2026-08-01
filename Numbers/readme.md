@@ -161,3 +161,121 @@ No extra space is used except a few variables.
 * `Math.pow()`
 * Variables
 * User Input (`Scanner`)
+
+
+# 2 Palindrome Number
+
+## Problem Statement
+
+Given an integer number, check whether the number is a palindrome or not.
+
+A number is called a palindrome if it remains the same after reversing its digits.
+
+Example:
+
+Input:
+121
+
+Output:
+true
+
+Explanation:
+Reverse of 121 is 121, so it is a palindrome.
+
+---
+
+## Approach
+
+To check whether a number is palindrome:
+
+- Reverse the given number.
+- Compare the reversed number with the original number.
+- If both are equal, the number is a palindrome.
+- Otherwise, it is not a palindrome.
+
+---
+
+## Algorithm
+
+1. Store the original number in a separate variable because the original value will be modified while reversing.
+
+2. Initialize a variable `reverse = 0` to store the reversed number.
+
+3. Extract the last digit of the number using:
+
+   digit = number % 10
+
+4. Add the extracted digit to the reverse number:
+
+   reverse = reverse * 10 + digit
+
+5. Remove the last digit from the number:
+
+   number = number / 10
+
+6. Repeat steps 3 to 5 until the number becomes 0.
+
+7. Compare the original number with the reversed number:
+   - If original number == reverse, return true.
+   - Otherwise, return false.
+
+---
+
+## Dry Run
+
+Input: 121
+
+Initial:
+
+originalNumber = 121  
+reverse = 0
+
+Iteration 1:
+
+digit = 121 % 10 = 1
+
+reverse = 0 * 10 + 1 = 1
+
+number = 121 / 10 = 12
+
+
+Iteration 2:
+
+digit = 12 % 10 = 2
+
+reverse = 1 * 10 + 2 = 12
+
+number = 12 / 10 = 1
+
+
+Iteration 3:
+
+digit = 1 % 10 = 1
+
+reverse = 12 * 10 + 1 = 121
+
+number = 1 / 10 = 0
+
+
+Comparison:
+
+Original Number = 121  
+Reverse Number = 121
+
+Output: true
+
+---
+
+## Time Complexity
+
+O(d)
+
+Where d is the number of digits in the number.
+
+---
+
+## Space Complexity
+
+O(1)
+
+Only constant extra variables are used.
